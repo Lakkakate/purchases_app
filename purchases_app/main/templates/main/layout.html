@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/9ac1cea447.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <aside>
+        <img src="{% static 'main/img/picture.png' %}" alt="Лого" width="100" height="100">
+        <span class="logo">Закупки</span>
+        <h3>Навигация</h3>
+        <ul>
+            <li><a href="{% url 'home' %}"><i class="fa-solid fa-house" style="color: #ffff;"></i>Главная</a></li>
+            <li><a href="{% url 'about' %}"><i class="fa-regular fa-address-card" style="color: #ffff;"></i>Про нас</a></li>
+            <li><a href="{% url 'news_home' %}"><i class="fa-solid fa-rectangle-ad" style="color: #ffff;"></i>Новости</a></li>
+            <li><a href=""><i class="fa-solid fa-envelope" style="color: #ffff;"></i>Контакты</a></li>
+            <li><a href="{% url 'create' %}"><button class="btn btn-info"><i class="fas fa-plus-circle" style="color: #ffff;"></i>Добавить новость</button></a></li>
+
+        </ul>
+    </aside>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
