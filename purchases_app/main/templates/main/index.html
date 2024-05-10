@@ -6,7 +6,8 @@
     <div class="features">
         <h1>{{ title }}</h1>
         <p>Выберите интересующий раздел</p>
-        <a href="{% url 'about' %}" class="btn btn-warning">На страницу про нас</a>
+        <a href="{% url 'about' %}" class="btn btn-warning">О программе</a><br>
+        <a href="{% url 'table_home' %}" class="btn btn-warning">Таблица учета заказов</a>
 
         {% for val in values %}
             <p>{{ val|upper }}</p>

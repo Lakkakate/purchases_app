@@ -67,12 +67,17 @@ div.alert-warning {
   width: 400px;
   margin: 20px 34%;
   text-align: left;
+
 }
 
 form {
   margin-left: 28%;
   width: 550px;
   margin-top: 50px;
+}
+
+.btn-warning {
+  margin-top: 20px;
 }
 
 aside ul a {
