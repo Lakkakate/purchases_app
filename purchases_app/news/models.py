@@ -1,6 +1,7 @@
 from django.db import models
 
-class Artecles(models.Model):
+
+class Articles(models.Model):
     title = models.CharField('Название', max_length=50)
     anons = models.CharField('Анонс', max_length=250)
     full_text = models.TextField('Статья')
