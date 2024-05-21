@@ -1,14 +1,16 @@
 {% extends 'main/layout.html' %}
-{% url 'users:login' %}
+
+{% block title %}Авторизация{% endblock %}
 
 {% block content %}
-
-<h1>Авторизация</h1>
-
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <p><button type="submit">Войти</button></p>
-</form>
-
+    <div class="features">
+        <h1>Вход в личный кабинет</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.username }}<br>
+            {{ form.password }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success save-button" type="submit">Войти в личный кабинет</button>
+        </form>
+    </div>
 {% endblock %}
