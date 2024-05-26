@@ -12,7 +12,17 @@
     <script src="https://kit.fontawesome.com/9ac1cea447.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+<header class="#" style="background-color: #181818;">
+    <nav>
+        <ul class="nav justify-content-end">
+            {% if user.is_authenticated %}
+                <li class="d-flex align-items-center"><span>{{ user.username }} </span> | <a class="nav-link active" aria-current="page" href="{% url 'users:logout' %}" >Выйти</a></li>
+            {% else %}
+                <li class="d-flex align-items-center"><a href="{% url 'users:login' %}" class="nav-link active" aria-current="page">Личный кабинет</a> | <a href="#" class="nav-link active" aria-current="page">Регистрация</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
     <aside>
         <img src="{% static 'main/img/picture.png' %}" alt="Лого" width="100" height="100">
         <span class="logo">Закупки</span>
@@ -25,7 +35,6 @@
             <li><a href="{% url 'news_home' %}"><i class="fa-solid fa-rectangle-ad" style="color: #ffff;"></i>Новости</a></li>
             <li><a href=""><i class="fa-solid fa-envelope" style="color: #ffff;"></i>Контакты</a></li>
             <li><a href="{% url 'create' %}"><button class="btn btn-info"><i class="fas fa-plus-circle" style="color: #ffff;"></i>Добавить новость</button></a></li>
-            <li><a href="{% url 'users:login' %}"><button class="btn btn-warning login-button">Личный кабинет</button></a></li>
 
         </ul>
     </aside>
@@ -36,3 +45,4 @@
 
 </body>
 </html>
+
